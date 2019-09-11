@@ -1,0 +1,11 @@
+baseURL = "http://jpninanjohn.dev/"
+languageCode = "en-us"
+title = "Food For Thought"
+theme = "hugo-theme-sam"
+
+[params]
+    author = "Ninan John"
+    description = "Programmer"
+
+[social]
+	github = "https://www.github.com/jpninanjohn"

@@ -1,0 +1,22 @@
+sudo: false
+dist: trusty
+install:
+- wget -q "https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.tar.gz"
+  -O "hugo.tar.gz"
+- tar -xzf hugo.tar.gz
+script:
+- "./hugo"
+deploy:
+  provider: pages
+  repo: jpninanjohn/blogContent
+  fqdn: http://jpninanjohn.dev
+  target-branch: master
+  skip_cleanup: true
+  local_dir: public
+  github_token: "$GITHUB_TOKEN"
+  keep-history: true
+  on:
+    branch: master
+env:
+  global:
+  - secure: bPqhGHApgp749uxQ5zXNRiweiFPFz8FsMOPeTh71LCz+dXYvlgoPw2kroVwV1+aI+a9/x/A2nlZENu2TRKzQUMeS/9HrMvRSxbO+e6/qV2lWQzNGruxJbdH3dxyqByKoPcjATB10JVDADPBd07PfSI4HHCPAC0dqASZcDLXeNPr/Hs6asubSLxxL0LFn06jqEos6BAu4JmPMAv+ij29LU5eyMXkjFJvUalyLOgJI2OzgvC0ygDq7j8a81tvoo3XydUNp9Co8GmwDfaEkx5wLyZ8KSFOGMk1OXoNNepyAuyR78TrMjeS2gmnYl5TsHi4of2Nu51WLlsS9J1THJ68baM0v1IIvNbVO96wl6sOm1W8bdsCUby4VpPbEiBhLO3PcN2ilOlpDdHxPPeI27zcLWcbmr2/CZy/qlX4OLXRD/sJZhtIM/UokwhcbunPTCrX7RTX30A9WwFBdN7CIZ6T+QPck195zXfeo19HpcIlYbrWVz5oo0r75a4ZaHfFHFOFX2oAQCD+tSBmX1FIcavZ8kRP5t/HVqH6NcJCnuzF8Aw1kYIHKQtcrEiwqYBy1dBKAK5lq1SsLfhJ08XsBnq/ZIMldO6nLJohcEN82Oe8MVeqNmp0GLH3c1l8hP9wB+asd3TeqwUGlMDh4kOQ7ntdgnStvo7tDrvTgsCRE+QJbPBA=
